@@ -1,0 +1,155 @@
+ID,ProjectType,Mobility_&_Congestion,Reliability,Connectivity,Multimodalism,Asset_Management,Saftey,Air_&_Climate,Cultural_&_Environmental_Resources,Social_Equity,Land_Use_Compatibility,Goods_Movement,Employment_Accessibility,Final_Score,Performance_Tier,Cost,Jurisdiction,ProjectDescription
+MID-01,Bike,100,,35,60,,57,100,68,100,75,,100,74,1,4580000,ATL,10th St Bridge Cycle Track
+GW-380,Bike,23,,68,70,,74,4,63,0,25,,100,50,4,5210000,GW,Buford Hwy Bike & Ped
+ADID-02,Ped,100,,100,30,,58,73,50,0,100,,100,70,1,6150000,ATL,Northside Drive Ped. Imp.
+HOL-01,Ped,23,,40,0,,10,4,50,0,0,,100,24,4,3090000,CH,Holly Springs - multiple streets
+DK-414-1,Ped,54,,100,30,,27,19,50,100,50,,100,60,4,5680000,DK,Ped to Schools
+DK-414-2,Ped,54,,100,30,,27,19,50,100,50,,100,60,4,5680000,DK,Ped to Schools
+DK-414-3,Ped,54,,100,30,,27,19,50,100,50,,100,60,4,5680000,DK,Ped to Schools
+DK-441,Ped,46,,100,70,,48,100,55,0,50,,100,63,1,5340000,DK,US 278 Improvements
+FAI-01,Ped,38,,100,93,,67,27,38,0,50,,100,62,3,4600000,FA,Broad Street Ped & Bike Lanes
+COS-01,Ped,100,,100,30,,66,100,5,100,50,,100,74,3,7800000,FN,Roswell Road/SR 9/US 19
+FS-287,Ped,33,,100,30,,18,45,50,100,50,,100,57,2,330000,FS,North Central Ave Improv.
+DAL-02,Ped,26,,40,0,,33,7,50,0,0,,100,28,2,250000,PA,SR 61/Confederate Avenue
+CL-01,Road Asset,74,,66,50,32,25,,40,100,,50,100,58,3,5010000,CL,Forest Parkway Pavement Rehab
+CL-267,Road Asset,33,,66,50,53,50,,62,100,,50,100,60,3,5810000,CL,Valley Hill Rd Bridge Replacement
+3-Mar,Road Asset,40,,0,100,56,0,,62,100,,0,100,48,3,4170000,CO,Franklin Gateway Bridge
+DO-300,Road Asset,28,,66,0,52,0,,50,0,,50,100,37,1,630000,DO,Riverside Parkway Bridge Upgrade
+FA-02-1,Road Asset,8,,33,0,95,50,,26,100,,0,100,47,3,590000,FA,Fayette Resurf  - W.McIntosh
+FA-02-10,Road Asset,5,,33,0,77,50,,38,0,,0,100,36,4,580000,FA,Fayette Resurf - Lees Lake Rd
+FA-02-11,Road Asset,23,,66,0,57,50,,0,0,,0,100,38,3,940000,FA,Fayette Resurf - Sandy Creek
+FA-02-2,Road Asset,18,,33,0,90,50,,37,0,,0,100,40,1,270000,FA,Fayette Resurf - Hampton Rd
+FA-02-3,Road Asset,9,,33,0,79,50,,41,0,,0,0,27,2,260000,FA,Fayette Resurf - Berhard
+FA-02-4,Road Asset,31,,66,0,58,50,,28,0,,0,0,30,4,2010000,FA,Fayette Resurf - Robbinson Rd
+FA-02-5,Road Asset,36,,66,0,68,50,,24,0,,0,0,32,4,3040000,FA,Fayette Resurf - S.Peachtree Pkwy
+FA-02-6,Road Asset,39,,66,0,51,50,,31,0,,0,100,41,1,600000,FA,Fayette Resurf - Beau/Redwine
+FA-02-7,Road Asset,45,,33,0,50,50,,46,0,,50,100,42,1,230000,FA,Fayette Resurf - Grady
+FA-02-8,Road Asset,14,,33,0,59,50,,35,0,,0,0,24,4,570000,FA,Fayette Resurf - Dogwood
+FA-02-9,Road Asset,26,,66,0,79,50,,39,0,,0,0,33,2,430000,FA,Fayette Resurf - Tyrone Rd
+JOH-05,Road Asset,94,,66,0,18,50,,26,0,,50,0,37,2,2000000,FN,SR120 Landscaping & Sound Abatement
+GW-PVT1,Road Asset,100,,66,0,62,0,,24,0,,50,100,47,1,2300000,GW,Peachtree Ind. Blvd Resurfacing
+GW-PVT2-1,Road Asset,100,,66,0,60,0,,37,0,,0,100,43,1,1500000,GW,Sat Blvd Resurf - PH1 - PH to SR120
+GW-PVT2-2,Road Asset,100,,66,0,60,0,,37,0,,0,100,43,1,1500000,GW,Sat Blvd Resurf - PH1 - PH to SR120
+GW-PVT3,Road Asset,58,,33,0,43,0,,39,0,,0,100,31,2,800000,GW,Riverside Parkway Resurfacing
+GW-PVT4,Road Asset,36,,66,0,69,0,,22,0,,0,0,25,2,950000,GW,Buford Dam Road Resurfacing
+GW-PVT5,Road Asset,53,,66,0,46,0,,44,0,,0,100,35,2,1000000,GW,Sat Blvd Resurf - PH2 - MG Ferry to Smith
+NE-106,Road Asset,46,,66,50,100,0,,61,0,,50,0,43,3,6660000,NE,Brown Bridge Rd @Yellow River
+NE-107,Road Asset,42,,66,0,69,25,,75,0,,50,0,36,4,4550000,NE,Brown Bridge Rd @Snapping Shoal
+CCID01,Road Expansion,14,100,0,0,,13,0,41,0,,0,73,25,2,20570000,CO,Akers Mill Express Lane Ramps
+CO-450B,Road Expansion,70,0,100,100,,38,82,49,0,,0,84,55,1,31160000,CO,S. Barrett Pkway Reliever - PH3
+NEWNAN-01,Road Expansion,24,30,0,62,,55,31,48,100,,0,65,40,3,52200000,CW,Lower Fayetteville Rd Widening
+EAS-01,Road Expansion,11,55,0,9,,21,35,48,100,,100,70,39,3,6330000,FS,Welcome All Rd Widening
+FT-001F,Road Expansion,31,76,0,20,,67,43,43,0,,100,62,44,1,17500000,FT,SR9 Widening
+AR-ML-020,Road Expansion,86,14,0,0,,14,0,50,100,,100,97,42,3,40100000,GDOT,I-285 @I-20 W - Int. Recons. & Widening
+AR-ML-025,Road Expansion,50,42,0,0,,41,100,50,0,,100,50,40,1,29190000,GDOT,I-285 @I-20 E - Int. Recons. & Widening
+AR-ML-210,Road Expansion,50,64,0,0,,17,0,0,100,,0,100,34,2,33400000,GDOT,I-285 from I-75 to I-20 Express Lanes
+AR-ML-240,Road Expansion,50,55,0,0,,20,0,30,100,,0,100,35,2,42720000,GDOT,I-285 East Wall Express Lanes
+GW-269,Road Expansion,100,100,0,100,,37,46,33,0,,100,100,65,1,39310000,GW,SR124 Widening
+GW-389,Road Expansion,9,0,0,0,,25,35,50,0,,100,74,25,2,15200000,GW,I-85 @ McGinnis Ferry Rd - New Int.
+GW-EVM1,Road Expansion,19,0,100,4,,38,25,46,0,,100,22,35,2,11600000,GW,North Evemore Pkwy Extension
+GW-KH,Road Expansion,69,45,0,0,,29,58,45,100,,0,33,35,1,20000000,GW,Killian Hill Rd Widening
+HE-005,Road Expansion,51,31,0,62,,41,71,55,100,,100,57,52,1,21940000,HE,SR81 Widening
+HE-109,Road Expansion,15,0,100,33,,25,45,65,0,,0,23,31,2,7000000,HE,Rock Quarry Road Extension
+HE-126 B,Road Expansion,36,32,0,45,,88,30,52,0,,100,64,45,3,18000000,HE,Bill Gardner Parkway Widening
+HE-137,Road Expansion,32,23,0,38,,26,37,47,0,,0,23,22,4,39000000,HE,East Atlanta Road Widening
+HE-161A,Road Expansion,36,33,0,68,,29,38,64,0,,0,63,33,4,32980000,HE,Rock Quarry Road Widening
+HE-193,Road Expansion,11,26,0,42,,27,27,68,0,,0,12,20,4,23700000,HE,Jodeco Road Widening
+PA-036B,Road Expansion,4,3,0,19,,47,25,34,0,,0,15,15,4,38850000,PA,Cedarcrest Rd Widening
+RO 235E1,Road Expansion,8,53,0,50,,60,37,58,0,,100,68,42,3,27310000,RO,Sigman Rd Widening - PH4
+RO 243,Road Expansion,5,0,100,16,,13,31,54,0,,0,70,29,4,21750000,RO,I-20 Crossing - Old Cov. To Flat Shoals
+RO-235D,Road Expansion,26,25,0,71,,65,31,71,100,,100,70,51,3,28300000,RO,Sigman Rd Widening - PH3
+Atlanta-03,Road Operations,49,44,100,0,,36,0,48,100,,0,100,49,3,18000000,ATL,Peachtree Strategy
+CHE-01,Road Operations,30,95,100,0,,75,0,50,0,,100,0,48,3,4500000,CH,Trickum Rd @ SR 92 Int. Improvements
+CHE-02,Road Operations,48,38,100,0,,72,38,50,0,,100,0,46,3,5800000,CH,I-575 @ Towne Lake Pkwy Int. Improv.
+CHE-03,Road Operations,41,49,100,0,,75,38,50,0,,100,0,47,3,4690000,CH,I-575 @ Ridgewalk Pkwy Int. Improv.
+Brookhaven-04a,Road Operations,70,84,100,30,,44,34,50,0,,0,0,46,1,2600000,DK,Ashford Dun. @ Windsor Pkwy
+Brookhaven-04b,Road Operations,25,57,100,30,,49,27,49,0,,0,0,37,4,8240000,DK,Ashford Dun. @ Ptree Rd
+Brookhaven-08,Road Operations,47,97,100,48,,38,28,50,0,,0,0,45,4,1920000,DK,Ashford Dun. @ Mont. Elem.
+Brookhaven-10,Road Operations,33,62,100,46,,51,28,48,0,,0,0,41,4,7600000,DK,Ashford Dun. Rd South
+DK-065B,Road Operations,76,55,100,100,,48,100,53,100,,0,100,74,1,22180000,DK,Panola Rd Seg.2 Oprtnl Impr.
+DK-344C-1,Road Operations,69,50,100,0,,49,100,51,100,,100,100,69,1,3200000,DK,25 signal upgrades
+DK-344C-2,Road Operations,69,50,100,0,,49,100,51,100,,100,100,69,1,3200000,DK,25 signal upgrades
+DK-344C-3,Road Operations,69,50,100,0,,49,100,51,100,,100,100,69,1,3200000,DK,25 signal upgrades
+DUN-01,Road Operations,92,100,0,50,,67,43,49,0,,0,0,44,2,4600000,DK,Chamblee Dun. Impr.
+FN-287,Road Operations,41,53,100,0,,31,33,47,0,,100,0,41,4,16000000,FN,SR 120 - Parsons to Medlock
+FN-288A,Road Operations,30,48,100,32,,30,28,49,0,,100,0,42,4,7000000,FN,Barnwell @ Holcolmb Br.
+FT-335,Road Operations,4,17,100,0,,21,25,50,0,,100,0,30,4,1400000,FT,Jewell Bennett Rd @ SR9 Realign/Turn
+GW-CVEH,Road Operations,75,47,100,0,,40,100,0,0,,100,100,59,1,2850000,GW,Ptree Ind. Blvd. Smart Cor - PH1 &2
+GW-ITS1-1,Road Operations,66,35,100,0,,13,100,36,100,,100,100,61,1,4890000,GW,ITS Expansion - PH1
+GW-ITS1-2,Road Operations,66,35,100,0,,13,100,36,100,,100,100,61,1,4890000,GW,ITS Expansion - PH1
+GW-ITS1-3,Road Operations,66,35,100,0,,13,100,36,100,,100,100,61,1,4890000,GW,ITS Expansion - PH1
+GW-ITS1-4,Road Operations,66,35,100,0,,13,100,36,100,,100,100,61,1,4890000,GW,ITS Expansion - PH1
+GW-ITS1-5,Road Operations,66,35,100,0,,13,100,36,100,,100,100,61,1,4890000,GW,ITS Expansion - PH1
+GW-ITS1-6,Road Operations,66,35,100,0,,13,100,36,100,,100,100,61,1,4890000,GW,ITS Expansion - PH1
+GW-ITS1-7,Road Operations,66,35,100,0,,13,100,36,100,,100,100,61,1,4890000,GW,ITS Expansion - PH1
+GW-ITS3-1,Road Operations,59,3,100,0,,25,100,36,100,,100,100,58,1,5930000,GW,ITS Expansion - PH2
+GW-ITS3-2,Road Operations,59,3,100,0,,25,100,36,100,,100,100,58,1,5930000,GW,ITS Expansion - PH2
+GW-ITS3-3,Road Operations,59,3,100,0,,25,100,36,100,,100,100,58,1,5930000,GW,ITS Expansion - PH2
+GW-ITS3-4,Road Operations,59,3,100,0,,25,100,36,100,,100,100,58,1,5930000,GW,ITS Expansion - PH2
+GW-ITS3-5,Road Operations,59,3,100,0,,25,100,36,100,,100,100,58,1,5930000,GW,ITS Expansion - PH2
+GW-ITS3-6,Road Operations,59,3,100,0,,25,100,36,100,,100,100,58,1,5930000,GW,ITS Expansion - PH2
+NE-105,Road Operations,8,12,100,0,,88,0,50,0,,100,100,47,3,5760000,NE,Realignment
+GRI-02,Road Operations,6,24,0,0,,39,25,55,0,,0,0,14,4,2400000,SP,Solomon St. Inters. Impr.
+SP-067A,Road Operations,7,26,100,0,,2,25,46,100,,100,100,46,4,12840000,SP,SR 155 Relocation
+AR-550,Transit Asset,54,,,,67,100,,0,0,,,100,60,3,4250000,GRTA,Xpress Fleet Reinvestment
+GRTA-003,Transit Asset,90,,,,0,100,,0,0,,,100,52,2,2500000,GRTA,Xpress Breeze Migrat. & Mobile Ticket
+GRTA-004,Transit Asset,90,,,,0,100,,0,0,,,100,52,2,8000000,GRTA,Xpress Integrated Tech Project
+GRTA-006,Transit Asset,33,,,,13,100,,30,100,,,100,60,3,8250000,GRTA,Xpress Rockdale P&R Expansion
+GW-PNR,Transit Asset,33,,,,86,0,,25,100,,,100,63,3,2000000,GW,Indian Trail P&R Lot Improvements
+M-AR-274B2,Transit Asset,17,,,,69,0,100,0,100,,,100,58,1,5500000,MARTA,MARTA Clean Bus Procurement
+MARTA-02,Transit Asset,59,,,,50,0,,60,100,,,100,63,2,4700000,MARTA,Edgewood Station TOD Improvements
+CO-702,Transit Expansion,100,16,100,0,,0,100,0,100,25,,50,53,3,6800000,CO,Weekend Transit Service
+DO-01,Transit Expansion,14,13,67,50,,0,16,46,100,25,,62,40,4,8000000,DO,Fixed Route Service
+GRTA-002,Transit Expansion,9,52,67,0,,100,6,42,100,25,,67,47,3,5880000,GRTA,Xpress NW Service Expansion
+GRTA-005,Transit Expansion,1,50,67,50,,100,0,65,0,0,,100,43,3,8250000,GRTA,Xpress Sugarloaf P&R Expansion
+GW-BUS1,Transit Expansion,64,13,100,25,,0,58,62,100,50,,88,58,1,5040000,GW,Gwinnett Transit Services Enh. - PH1
+GW-BUS2,Transit Expansion,64,13,100,25,,0,58,47,100,50,,88,57,1,3210000,GW,Gwinnett Transit Services Enh. - PH2
+GW-BUS3,Transit Expansion,26,25,33,25,,0,29,47,100,50,,83,42,4,4590000,GW,Gwinnett Transit Route 55
+MARTA-04,Transit Expansion,100,71,67,0,,100,100,48,100,25,,73,69,3,45000000,MARTA,Clifton Corridor
+MARTA-05-1,Transit Expansion,18,30,33,0,,0,7,48,100,0,,73,31,2,4810000,MARTA,MORE MARTA - Route 71
+MARTA-05-10,Transit Expansion,0,25,33,0,,0,0,49,100,0,,68,27,4,2480000,MARTA,MORE MARTA - Route 60
+MARTA-05-11,Transit Expansion,1,13,67,0,,0,0,48,100,75,,72,38,4,1380000,MARTA,MORE MARTA - Route 2
+MARTA-05-12,Transit Expansion,11,13,67,0,,0,10,49,100,75,,81,41,2,1210000,MARTA,MORE MARTA - Route 102
+MARTA-05-2,Transit Expansion,17,30,33,0,,0,12,49,100,25,,77,34,2,2500000,MARTA,MORE MARTA - Route 78
+MARTA-05-3,Transit Expansion,13,33,33,0,,0,8,49,100,25,,63,32,2,3310000,MARTA,MORE MARTA - Route 83
+MARTA-05-4,Transit Expansion,100,30,67,0,,0,100,47,100,0,,88,54,1,4660000,MARTA,MORE MARTA - Route 95
+MARTA-05-5,Transit Expansion,100,30,100,0,,0,100,49,100,25,,89,62,1,1490000,MARTA,MORE MARTA - Route 110
+MARTA-05-6,Transit Expansion,65,25,33,0,,0,0,49,100,25,,81,40,2,2570000,MARTA,MORE MARTA - Route 12
+MARTA-05-7,Transit Expansion,1,25,67,0,,0,0,49,100,25,,76,35,4,2820000,MARTA,MORE MARTA - Route 49
+MARTA-05-8,Transit Expansion,51,25,67,0,,0,51,49,100,25,,73,45,1,2670000,MARTA,MORE MARTA - Route 51
+MARTA-05-9,Transit Expansion,43,25,67,0,,0,36,48,100,25,,70,42,3,4260000,MARTA,MORE MARTA - Route 55
+AR-450A,Trail,100,,80,50,,100,100,67,100,25,,100,80,3,101000000,ATL,ATL Beltline - NE Quad
+AR-450C,Trail,100,,100,50,,100,100,65,100,25,,100,83,3,98820000,ATL,ATL Beltline - SE Quad
+ATL-299,Trail,100,,100,50,,75,100,48,100,25,,100,78,1,8150000,ATL,Lee Street Trail
+BCID-02,Trail,52,,20,0,,0,46,55,0,0,,100,27,2,4550000,ATL,Lenox Rd Trail
+BCID-04,Trail,83,,20,0,,50,86,50,0,25,,100,44,3,13950000,ATL,Peachtree Rd Trail - Buckhead
+LBI-01,Trail,34,,80,50,,75,32,61,0,0,,0,40,4,5600000,ATL,PATH400 - Wieuca to Loridans
+LBI-2,Trail,49,,100,50,,75,67,49,0,25,,100,59,1,3700000,ATL,PATH400 - Sandy Springs Ext.
+WOO-1,Trail,64,,100,0,,0,52,31,0,100,,100,51,1,3650000,CH,Noonday Creek Trail Extension
+1-Mar,Trail,50,,20,50,,50,44,37,100,0,,0,38,4,6650000,CO,North Marietta Pkwy
+2-Mar,Trail,36,,60,50,,50,39,32,0,25,,0,35,2,2320000,CO,Burnt Hickory Trail
+CCID03,Trail,24,,20,0,,75,19,47,0,0,,0,22,4,2480000,CO,Akers Mill Trail
+CO-2,Trail,75,,60,50,,0,61,37,100,0,,100,52,1,6770000,CO,Mableton Parkway Trail - PH1
+CO-3,Trail,65,,60,50,,25,52,45,100,0,,100,54,1,4700000,CO,Mableton Parkway Trail - PH2
+CO-462,Trail,16,,80,50,,50,14,25,100,25,,100,53,3,10920000,CO,Rottenwood Creek Trail - PH1
+CO-703,Trail,25,,100,0,,0,23,40,100,0,,0,32,2,2200000,CO,West Atlanta Street Trail
+CW-077,Trail,20,,60,0,,0,16,48,0,0,,0,16,2,1300000,CW,Senoia Ivy Ridge Trail
+Brookhaven-02,Trail,49,,100,50,,50,36,79,100,0,,0,52,1,3400000,DK,Peachtree Creek Greenway - PH2
+Brookhaven-05,Trail,71,,20,50,,0,69,48,100,0,,0,36,2,4760000,DK,North Druid Hills Path
+Brookhaven-06,Trail,34,,20,50,,75,34,47,0,25,,0,33,4,5000000,DK,Dresden Dr - Trail
+Brookhaven-09,Trail,57,,100,50,,50,43,69,100,0,,0,53,3,6600000,DK,Peachtree Creek Greenway - PH1
+DK417,Trail,60,,20,50,,75,90,50,0,0,,100,48,3,6500000,DK,Georgetown Multimodal
+DK418-A,Trail,100,,80,0,,50,96,50,0,0,,100,52,1,2820000,DK,Perimeter Trails - Ashford Dunw.
+DK418-B,Trail,49,,80,0,,50,49,49,0,0,,100,42,3,4720000,DK,Perimeter Trails - Ptree Dunwoody
+FA-353-1,Trail,62,,40,0,,0,49,32,0,25,,100,33,2,3090000,FA,Fayetteville Multi-Use Path
+FA-353-3,Trail,62,,40,0,,0,49,32,0,25,,100,33,2,3090000,FA,Fayetteville Multi-Use Path
+UNI-01,Trail,2,,40,0,,75,2,62,0,0,,100,32,4,550000,FS,Amenity Connector Trail
+GW-384,Trail,90,,0,0,,0,88,36,0,25,,100,34,4,8770000,GW,Western Gwinnett Bikeway Ext
+GW-385,Trail,75,,60,0,,0,64,43,100,0,,100,46,1,5550000,GW,Norcross to Lilburn Trail
+GW-402,Trail,40,,60,0,,0,30,50,0,25,,0,22,4,4600000,GW,Rogers Bridge
+GW-TRL1,Trail,18,,20,0,,50,14,74,0,0,,100,29,4,3700000,GW,McDaniel Farm Park Connector
+NORC-17-02,Trail,47,,20,0,,0,73,50,100,25,,100,40,3,5450000,GW,Norcross LCI Greenway
+Peachtree Corners-01,Trail,98,,80,0,,50,100,17,100,0,,100,60,1,4300000,GW,Crooked Creek Multi-Use Trail
+DAL-01,Trail,32,,20,0,,0,26,44,0,0,,0,12,2,630000,PA,Dallas Battlefield Trail
+PA-100,Trail,39,,20,0,,0,36,25,0,0,,0,12,4,4230000,PA,Dallas Battlefield Trail - PH2
+LOG-01,Trail,31,,20,0,,0,30,51,0,0,,0,13,2,2000000,WA,SR81 Shared Use Path
