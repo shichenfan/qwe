@@ -241,7 +241,8 @@ var variableMap = {
     "column_chart": false,
     "format": "decimal"
   },
-  "Jurisdiction":{
+  /*
+	"Jurisdiction":{
     "name": "Jurisdiction",
     "description": "Jurisdiction",
     "column_chart": false,
@@ -253,6 +254,7 @@ var variableMap = {
     "column_chart": false,
     "format": "decimal"
   },
+  */
   "Mobility_&_Congestion":{
     "name": "Mobility & Congestion",
     "description": "Travel Time Index on project link",
