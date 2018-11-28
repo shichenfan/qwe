@@ -256,7 +256,7 @@ var variableMap = {
   },
   */
   "Mobility_._Congestion":{
-    "name": "Mobility_._Congestion",
+    "name": "Mobility & Congestion",
     "description": "Travel Time Index on project link",
     "column_chart": false,
     "format": "decimal"
@@ -292,14 +292,14 @@ var variableMap = {
     "format": "decimal"
   },
   "Air_._Climate":{
-    "name": "Air_._Climate",
-    "description": "Air_._Climate",
+    "name": "Air & Climate",
+    "description": "Air & Climate",
     "column_chart": false,
     "format": "decimal"
   },
   "Cultural_._Environmental_Resources":{
-    "name": "Cultural_._Environmental_Resources",
-    "description": "Cultural_._Environmental_Resources",
+    "name": "Cultural & Environmental_Resources",
+    "description": "Cultural & Environmental_Resources",
     "column_chart": false,
     "format": "decimal"
   },
