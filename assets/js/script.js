@@ -910,7 +910,7 @@ function getStationData(layer, source){
 	categories.splice(index, 1);
 	index = categories.indexOf('Land_Use_Compatibility');
 	categories.splice(index, 1);
-	index = categories.indexOf('Cultural_&_Environmental_Resources');
+	index = categories.indexOf('Cultural_._Environmental_Resources');
 	categories.splice(index, 1);
 	index = categories.indexOf('Final_Score');
 	categories.splice(index, 1);
@@ -940,7 +940,7 @@ function getStationData(layer, source){
 		data: data,
 		ProjectType: ProjectTypeData[ProjectType]
 	};
-	var variableList = ['Final_Score', 'Performance_Tier', 'Cost', 'Land_Use_Compatibility', 'Cultural_&_Environmental_Resources'];
+	var variableList = ['Final_Score', 'Performance_Tier', 'Cost', 'Land_Use_Compatibility', 'Cultural_._Environmental_Resources'];
 	drawBarChart(chartData, 'totals');
 	var summaryString = getSummaryString(variableList, csvMap[id][0]);
 	$('#data-summary')
