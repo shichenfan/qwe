@@ -1,4 +1,4 @@
-"ID","ProjectType","Mobility_._Congestion","Reliability","Connectivity","Multimodalism","Asset_Management","Saftey","Air_._Climate","Cultural_._Environmental_Resources","Social_Equity","Land_Use_Compatibility","Goods_Movement","Employment_Accessibility","Final_Score","Performance_Tier","Cost","Jurisdiction","ProjectDescription"
+"ID","ProjectType","Mobility_Congestion","Reliability","Connectivity","Multimodalism","Asset_Management","Saftey","Air_Climate","Cultural_Environmental_Resources","Social_Equity","Land_Use_Compatibility","Goods_Movement","Employment_Accessibility","Final_Score","Performance_Tier","Cost","Jurisdiction","ProjectDescription"
 "MID-01","Bike",100,NA,35,60,NA,57,100,68,100,75,NA,100,74,1,4580000,"ATL","10th St Bridge Cycle Track"
 "GW-380","Bike",23,NA,68,70,NA,74,4,63,0,25,NA,100,50,4,5210000,"GW","Buford Hwy Bike & Ped"
 "ADID-02","Ped",100,NA,100,30,NA,58,73,50,0,100,NA,100,70,1,6150000,"ATL","Northside Drive Ped. Imp."
