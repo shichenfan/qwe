@@ -241,6 +241,13 @@ var variableMap = {
     "column_chart": false,
     "format": "decimal"
   },
+	
+	/*"county":{
+		"name": "County",
+		"description": "County of origin",
+		"column_chart": false,
+		"format": "decimal"
+	},*/
   /*
 	"Jurisdiction":{
     "name": "Jurisdiction",
@@ -890,7 +897,7 @@ function getStationData(layer, source){
 		weight: 10
 	});
 	info.update(layer.feature.properties);
-	var categories = d3.keys(csvMap['AR-959'][0]);
+	var categories = d3.keys(csvMap['GW-380'][0]);
 	var index = categories.indexOf('ProjectType');
 	categories.splice(index, 1);
 	index = categories.indexOf('ID');
@@ -1066,7 +1073,7 @@ function drawBarChart(data, type){
         yAxis: {
             allowDecimals: true,
             min: 0,
-            max: 1,
+            max: 100,
             title: {
                 text: 'Score'
             }
