@@ -263,7 +263,7 @@ var variableMap = {
   },
   */
   "Mobility_._Congestion":{
-    "name": "Mobility & Congestion",
+    "name": "Mobility and Congestion",
     "description": "Travel Time Index on project link",
     "column_chart": false,
     "format": "decimal"
