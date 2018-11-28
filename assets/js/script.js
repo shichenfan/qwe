@@ -92,7 +92,7 @@ var searchHighlightIds = [];
 
 var xVariablePreset = 'Final_Score'
 var yVariablePreset = 'Performance_Tier'
-var rVariablePreset = 'Cultural_&_Environmental_Resources'
+var rVariablePreset = 'Cultural_._Environmental_Resources'
 var colorVariablePreset = 'Cost'
 var defaultHex = "#f768a1";
 var variableMap = {
