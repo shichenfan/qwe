@@ -1501,8 +1501,8 @@ function initialize() {
 					row[0] = '<a class="project-row" id="'+row[0].replace(/ /gi, "-")+'-row" href="#' + row[0] + '">' + row[0] + '</a>';
 
 					// Start at i = 3 because first 3 elements are non-numerical
-					for (var i = 5; i < row.length; i++) {
-						if (i = 5 && !isNaN(row[i]) && typeof row[i] !== 'undefined'){
+					for (var i = 4; i < row.length; i++) {
+						if (i <= 5 && !isNaN(row[i]) && typeof row[i] !== 'undefined'){
 							row[i] = formats.fullDollar(+row[i]);
 						}
 						else if ( i > 5 && !isNaN(row[i])){
