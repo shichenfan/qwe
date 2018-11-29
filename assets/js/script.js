@@ -72,9 +72,9 @@ colorbrewer.RdPu.mod7.splice(0,1);
 var filterBool = false;
 var projMap, projTypeMap;
 var csvData = {};
-var regionalData, ProjectTypeData;
+var regionalData, countyData;
 var colorScale;
-var csvMap, ProjectTypeMap, geomMap;
+var csvMap, countyMap, geomMap;
 var xVariable = $('#xVariable').val();
 var yVariable = $('#yVariable').val();
 var rVariable = $('#rVariable').val();
@@ -90,268 +90,116 @@ var previousMouseId;
 var formats = {};
 var searchHighlightIds = [];
 
-var xVariablePreset = 'Final_Score'
-var yVariablePreset = 'Performance_Tier'
-var rVariablePreset = 'Cultural_Environmental_Resources'
-var colorVariablePreset = 'Cost'
+var xVariablePreset = 'final_score'
+var yVariablePreset = 'cost'
+var rVariablePreset = 'cost'
+var colorVariablePreset = 'cost'
 var defaultHex = "#f768a1";
 var variableMap = {
-	/*"ID":{
+	"ID":{
 		"name": "Project ID",
 		"description": "ARC project identifier",
 		"column_chart": false,
 		"format": "decimal"
 	},
-	"county":{
-		"name": "County",
-		"description": "County of origin",
+	"project_type":{
+		"name": "Project Type",
+		"description": "Project Type",
 		"column_chart": false,
 		"format": "decimal"
 	},
-	"total_cost":{
+	"performance_tier":{
+		"name": "Performance Tier",
+		"description": "Performance Tier",
+		"column_chart": false,
+		"format": "decimal"
+	},
+	"cost":{
 		"name": "Cost in Millions",
 		"description": "Total cost of project in millions of dollars",
 		"column_chart": false,
 		"format": "dollar"
 	},
-	"benefit_2015":{
-		"name": "2015 Benefit in Millions",
-		"description": "Monetary benefit of the project in millions if it is built in 2015",
-		"column_chart": false,
-		"format": "dollar"
-	},
-	"benefit_2040":{
-		"name": "2040 Benefit in Millions",
-		"description": "Monetary benefit of the project in millions if it is built in 2040",
-		"column_chart": false,
-		"format": "dollar"
-	},
-	"bc_2015":{
-		"name": "2015 Benefit/Cost",
-		"description": "Benefit/Cost of project if it were built in 2015",
-		"column_chart": false,
-		"format": "decimal"
-	},
-	"bc_2040":{
-		"name": "2040 Benefit/Cost",
-		"description": "Benefit/Cost of project if it were built in 2040 ",
-		"column_chart": false,
-		"format": "decimal"
-	},
-	"current_congestion":{
-		"name": "Current Congestion Index",
-		"description": "Travel Time Index on project link",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"current_safety":{
-		"name": "Current Safety Index",
-		"description": "Ratio of crash rate/ average crash rate by facility type",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"current_freight":{
-		"name": "Current Freight Index",
-		"description": "Whether or not project lies within the ASTRO Network",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"current_reliability":{
-		"name": "Current Reliability Index",
-		"description": "Trip reliability on project link using Buffer Index",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"current_eta":{
-		"name": "Current Equity Index",
-		"description": "Whether or not project lies within an ETA",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"current_air":{
-		"name": "Current Air Quality Index",
-		"description": "Average concentration of particulate matter around project link ",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"current_access":{
-		"name": "Current Accessibility Index",
-		"description": "The percent of vehicles going to or coming from an activity center on the project link ",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"current_score":{
-		"name": "Current Need",
-		"description": "The sum of the weighted current data points indicating need",
-		"column_chart": false,
-		"format": "decimal"
-	},
-	"future_congestion":{
-		"name": "Future Congestion Index",
-		"description": "Difference in VHD on the project link build-no build",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"future_access":{
-		"name": "Future Accessibility Index",
-		"description": "Difference in percent of vehicles going to or coming from an activity center on the project link build-no build",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"future_freight":{
-		"name": "Future Freight Index",
-		"description": "Difference in truck VMT on link build-no build",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"future_deliverable":{
-		"name": "Future Deliverability Index",
-		"description": "Total environmental obstacles along project links inversed so high value= high deliverability",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"future_air":{
-		"name": "Future Air Quality Index",
-		"description": "Difference in level of particulates regionally build-no build",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"future_volume":{
-		"name": "Future Volume Index",
-		"description": "Volume/Mile categorized",
-		"column_chart": true,
-		"format": "decimal"
-	},
-	"future_score":{
-		"name": "Future Performance",
-		"description": "The sum of the weighted future data points indicating performance",
-		"column_chart": false,
-		"format": "decimal"
-	},
-  */
-  "ID":{
-    "name": "Project ID",
-    "description": "ARC project identifier",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "ProjectType":{
-    "name": "ProjectType",
-    "description": "ProjectType",
-    "column_chart": false,
-    "format": "decimal"
-  },
 	
-	/*"county":{
-		"name": "County",
-		"description": "County of origin",
+	
+	"mobility":{
+		"name": "Mobility & Congestion Index",
+		"description": "1)Corridor Congestion Intensity 2) Change in Congestion Extent",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"reliability":{
+		"name": "Reliability Index",
+		"description": "Aggregated 80% travel time / 50% travel time for all weekdays",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"connect":{
+		"name": "Network Connectivity Index",
+		"description": "Supports the Regional Policy Networks",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"multimodal":{
+		"name": "Multimodalism Index",
+		"description": "Additional person throughput by active modes or transit",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"assetmngmt":{
+		"name": "Asset Management & Resiliency Index",
+		"description": "Facility Vulnerability",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"saftey":{
+		"name": "Safety Index",
+		"description": "Improved Safety",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"airclimate":{
+		"name": "Air and Climate Index",
+		"description": "1) Project Emissions 2) Near Road Emissions Exposure",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"cultenv":{
+		"name": "Cultural & Environmental Resources Index",
+		"description": "Impact on Culturally & Environmentally Sensitive Land Uses",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"social_equity":{
+		"name": "Social Equity Index",
+		"description": "Does project serve an ETA community?",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"land_compat":{
+		"name": "Land Use Compatibility",
+		"description": "Land Use Compatibility",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"goods_move":{
+		"name": "Goods Movement Index",
+		"description": "Does the project improve the movement of freight and is it located on ARC’s regional freight system (ASTRoMaP), GDOT’s Statewide Designated Freight Corridors or the FHWA National Highway Freight Network (NHFN)?",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"emp_access":{
+		"name": "Employment Accessibility Index",
+		"description": "Does the project connect to (or is it within) a Regional Employment Center, a Freight Cluster Area or a Regional Place?",
+		"column_chart": true,
+		"format": "decimal"
+	},
+	"final_score":{
+		"name": "Final Score",
+		"description": "The sum of the weighted  data points indicating performance",
 		"column_chart": false,
 		"format": "decimal"
-	},*/
-  /*
-	"Jurisdiction":{
-    "name": "Jurisdiction",
-    "description": "Jurisdiction",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "ProjectDescription":{
-    "name": "ProjectDescription",
-    "description": "ProjectDescription",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  */
-  "Mobility_Congestion":{
-    "name": "Mobility Congestion",
-    "description": "Travel Time Index on project link",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Reliability":{
-    "name": "Reliability",
-    "description": "how consistently certain travel time conditions are observed",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Connectivity":{
-    "name": "Connectivity",
-    "description": "Network Connectivity",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Multimodalism":{
-    "name": "Multimodalism",
-    "description": "Roadway TSM&O Multimodalism Criterion",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Asset_Management":{
-    "name": "Asset Management",
-    "description": "Asset_Management",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Saftey":{
-    "name": "Saftey",
-    "description": "Saftey",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Air_Climate":{
-    "name": "Air Climate",
-    "description": "Air_Climate",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Cultural_Environmental_Resources":{
-    "name": "Cultural Environmental Resources",
-    "description": "Cultural_Environmental_Resources",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Social_Equity":{
-    "name": "Social Equity",
-    "description": "Social_Equity",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Land_Use_Compatibility":{
-    "name": "Land Use Compatibility",
-    "description": "Land_Use_Compatibility",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Goods_Movement":{
-    "name": "Goods Movement",
-    "description": "Goods_Movement",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Employment_Accessibility":{
-    "name": "Employment Accessibility",
-    "description": "Employment_Accessibility",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Final_Score":{
-    "name": "Final Score",
-    "description": "Final_Score",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Performance_Tier":{
-    "name": "Performance Tier",
-    "description": "Performance Tier",
-    "column_chart": false,
-    "format": "decimal"
-  },
-  "Cost":{
-    "name": "Cost",
-    "description": "Cost",
-    "column_chart": false,
-    "format": "dollar"
-  },
+	},
 };
 formats.dollar = d3.format('$,.2s');
 formats.fullDollar = d3.format('$,.2');
@@ -379,7 +227,7 @@ info.update = function (props) {
 		// $('#chartPanel').append('<div id="data-summary"></div>');
 	}
 	else{
-		// $('#chartPanel').html(
+		// $('#chartPanel').html( 
 		// // '<h4><strong>ARC Project Evaluation</strong></h4>' +
 		// '');
 		this._div.innerHTML = 'Click a project on the map or chart for more info.'
@@ -409,12 +257,12 @@ $(function() {
 		e.preventDefault();
 		$(this).tab('show');
 	})
-	// $("#mapTabLink").on('show.bs.tab', function() {
+	// $("#mapTabLink").on('show.bs.tab', function() { 
 	// 	map.invalidateSize(false);
 	// 	// console.log('map tab');
 	// });
     initialize();
-
+    
 	$('.modal').on('show.bs.modal', function() {
 		var chart = $('#chart').highcharts();
 	    $('#chart').css('visibility', 'hidden');
@@ -424,13 +272,13 @@ $(function() {
 	    $('#chart').css('visibility', 'initial');
 	    chart.reflow();
 	});
-
+	
     var tableHighlightId = null;
     // var table = $('#projectTable').DataTable();
     $('#projectTable').on('mouseover', 'tr', function(){
     	if (tableHighlightId !== null && !filterBool)
 			removeHighlightChartPoint(tableHighlightId);
-
+		
 		table = $('#projectTable').DataTable();
 		var row = table.row(this);
 		var id = $(row.data()[0]).text();
@@ -549,7 +397,7 @@ function getFilters(){
 	return filters;
 }
 function closeChart(){
-	$('#ProjectTypeFilter').val('');
+	$('#countyFilter').val('');
 	$('#data-summary').html('');
 	if (previousProps !== null){
 		info.update();
@@ -594,7 +442,7 @@ function filterData($this, filters, e){
 		filterClass = 'special'
 	}
 	// console.log(filterClass);
-
+	
 	// console.log(filters);
 	$('#clear-dates').removeAttr('disabled');
 	// console.log(e.target.id);
@@ -617,7 +465,7 @@ function filterData($this, filters, e){
     		filters = {};
     		filters.station = '';
     	}
-		$.ajax({
+		$.ajax({ 
 			url: url + paramsString,
 			beforeSend: function(){
 				$('#loading').css({opacity: 1.0, visibility: "visible"});
@@ -652,7 +500,7 @@ function filterData($this, filters, e){
 				for (var j = layers.length - 1; j >= 0; j--) {
         			var tooltip = layers[j]._tooltip;
         			var id = layers[j].feature.properties.ID;
-        			var opacityValue = 0.4;
+        			var opacityValue = 0.4; 
 
         			// If station does not have data for filter query, do not show it.
         			if (typeof rollup[id] === 'undefined'){
@@ -665,7 +513,7 @@ function filterData($this, filters, e){
         					'<p><strong>' + id + '</strong></p>' +
         					'<p>Average daily: ' + averageCount + '</p>' +
         					'<p>Days of counting: ' + rollup[id].dates.length + '</p>' +
-        					'<p>Directions counted: ' + rollup[id].dirs.length + '</p>'
+        					'<p>Directions counted: ' + rollup[id].dirs.length + '</p>' 
         				);
         				var newCount = averageCount;
         				var currentOpacity = 0.0;
@@ -676,7 +524,7 @@ function filterData($this, filters, e){
         					// console.log(id + ' highligh');
         				}
         				layers[j].setStyle({
-        					fill: true,
+        					fill: true, 
         					stroke: true,
         					fillOpacity: opacityValue,
         					// color: 'blue',
@@ -751,8 +599,8 @@ function adjustFilters(filters){
 function createNestingFunction(propertyName, propertyValues, propertyMap){
 	// console.log(propertyValues);
 	// console.log()
-	return function(d){
-
+	return function(d){ 
+		
 		// console.log(d[propertyMap[propertyName]]);
 		// if ( propertyValues.indexOf(d[propertyMap[propertyName]]) > -1){
 		// if (_.some(propertyValues, d[propertyMap[propertyName]])){
@@ -882,12 +730,12 @@ function getStationData(layer, source){
 	}
 	$('#'+id.replace(/ /gi, "-")+'-row').closest('tr').addClass('warning');
 	var description = layer.feature.properties.PRJ_DESC !== null ? toTitleCase(layer.feature.properties.PRJ_DESC) : 'No description';
-
+	
 	description += closeChartButton;
 	if (layer.feature.properties.Fact_Sheet !== null){
 		description += '<br/><a class="btn btn-default btn-xs" href="'+layer.feature.properties.Fact_Sheet+'"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span> View Fact Sheet</a>';
 	}
-	var ProjectType = csvMap[id][0].ProjectType;
+	var project_type = csvMap[id][0].project_type;
 	// console.log(county);
 	layer.setStyle({
 		fillColor: highlightStroke,
@@ -897,30 +745,25 @@ function getStationData(layer, source){
 		weight: 10
 	});
 	info.update(layer.feature.properties);
-	var categories = d3.keys(csvMap['GW-380'][0]);
-	var index = categories.indexOf('ProjectType');
+	var categories = d3.keys(csvMap['GW-ITS3-5'][0]);
+	var index = categories.indexOf('project_type');
 	categories.splice(index, 1);
 	index = categories.indexOf('ID');
 	categories.splice(index, 1);
-	index = categories.indexOf('Cost');
+	index = categories.indexOf('performance_tier');
 	categories.splice(index, 1);
-	index = categories.indexOf('Asset_Management');
+	index = categories.indexOf('cost');
 	categories.splice(index, 1);
-	index = categories.indexOf('Multimodalism');
-	categories.splice(index, 1);
-	index = categories.indexOf('Land_Use_Compatibility');
-	categories.splice(index, 1);
-	index = categories.indexOf('Cultural_Environmental_Resources');
-	categories.splice(index, 1);
-	index = categories.indexOf('Final_Score');
-	categories.splice(index, 1);
-	index = categories.indexOf('Performance_Tier');
+	/*index = categories.indexOf('cultenv');
+	categories.splice(index, 1);*/
+	index = categories.indexOf('final_score');
 	categories.splice(index, 1);
 	$.each(categories, function(i, varName){
 		if (typeof variableMap[varName] !== 'undefined')
 			categories[i] = variableMap[varName].name;
 
 	});
+	
 	// console.log(csvMap[id]);
 	// console.log(id);
 	var data;
@@ -933,14 +776,14 @@ function getStationData(layer, source){
 		return;
 	}
 	// console.log(data);
-
+	
 	var chartData = {
 		description: id + ' Component Scores',
 		categories: categories,
 		data: data,
-		ProjectType: ProjectTypeData[ProjectType]
+		project_type: countyData[project_type]
 	};
-	var variableList = ['Final_Score', 'Performance_Tier', 'Cost', 'Land_Use_Compatibility', 'Cultural_Environmental_Resources'];
+	var variableList = ['final_score', 'cost'];
 	drawBarChart(chartData, 'totals');
 	var summaryString = getSummaryString(variableList, csvMap[id][0]);
 	$('#data-summary')
@@ -1032,7 +875,7 @@ function getSummaryString(variableList, row){
 	summaryTable.append('<thead><tr><th>Category</th><th>'+row['ID']+'</th><th>Regional</th></tr></thead>')
 	var tBody = $('<tbody>');
 	$.each(variableMap, function(varName, data){
-		if (!data.column_chart && varName !== 'ID' && varName !== 'ProjectType'){
+		if (!data.column_chart && varName !== 'ID' && varName !== 'project_type'){
 			var projValue = row[varName];
 			var regionalValue = regionalMap[varName]/csvRows.length;
 			projValue = formats[variableMap[varName].format](projValue);
@@ -1043,13 +886,13 @@ function getSummaryString(variableList, row){
 			}
 			tBody.append(
 				'<tr><td>' +variableMap[varName].name
-				+ description + '</td><td>' + projValue +  '</td>' +
+				+ description + '</td><td>' + projValue +  '</td>' + 
 				'<td>' + regionalValue + '</td></tr>'
 			);
 		}
 	});
 	for (var i = 0; i < variableList.length; i++) {
-
+		
 	};
 	summaryTable.append(tBody);
 	return summaryTable;
@@ -1101,8 +944,8 @@ function drawBarChart(data, type){
             data: regionalData,
             stack: 'female'
         }, {
-            name: 'ProjectType average',
-            data: data.ProjectType,
+            name: 'Project Type average',
+            data: data.project_type,
             stack: 'female'
         },
         ]
@@ -1152,7 +995,7 @@ function highlightChartPoint(id){
 // 		chart.series[0].addPoint(newPoint);
 // 		//select the last point
 // 		chart.series[0].points[chart.series[0].points.length - 1].select();
-// 	}
+// 	}	
 // }
 function removeHighlightChartPoint(id){
 	// Check if we're looking at scatterplot or specific project
@@ -1175,21 +1018,21 @@ function removeHighlightChartPoint(id){
 }
 function drawScatter(data){
 	var xBand, yBand, label;
-	if (xVariable === 'Final_Score' ){
+	if (xVariable === 'final_score' ){
 		xBand = [{ // mark the 0 values for current need
 						color: '#FCFFC5',
 						from: -5,
 						to: 5
 					}];
 	}
-	if (yVariable === 'Final_Score' ){
+	if (yVariable === 'final_score' ){
 		yBand = [{ // mark the 0 values for current need
 						color: '#FCFFC5',
 						from: -5,
 						to: 5
 					}];
 	}
-	if (yVariable === 'Final_Score' || xVariable === 'Final_Score'){
+	if (yVariable === 'final_score' || xVariable === 'final_score'){
 		label = {
             items: [{
                 html: 'Projects in yellow are new facilities (i.e., no current need can be determined).',
@@ -1253,7 +1096,7 @@ function drawScatter(data){
     			}
     			// console.log(tooltipFormats);
     			return tooltipString;
-
+    					
     		}
 		},
         plotOptions: {
@@ -1331,7 +1174,7 @@ function drawScatter(data){
             color: '#ddd'
         }]
     });
-
+	
 }
 jQuery.unparam = function (value) {
     if (value.length > 1 && value.charAt(0) == '#'){
@@ -1423,7 +1266,7 @@ function getScatterData(csvRows, filter){
 			};
 			dataValues.push(totalObject);
 		// }
-
+		
 	});
 	return {
 		description: variableMap[yVariable].name + ' vs. ' + variableMap[xVariable].name,
@@ -1453,7 +1296,7 @@ function getColorScale(row){
 	}
 	else{
 		return jenks[colorVariable](+row[colorVariable]);
-	}
+	}	
 }
 // function filterCounties(county){
 // 	// console.log(county);
@@ -1470,9 +1313,9 @@ function initialize() {
 
 	$.each(variableMap, function(csvVar, data){
 		// var selected = i === 1 ? '' : 'selected';
-		if (csvVar !== 'ID' && csvVar !== 'ProjectType'){
+		if (csvVar !== 'ID' && csvVar !== 'project_type'){
 			selected = '';
-			$('.scatterVariable').append('<option value=' + csvVar + ' ' + selected + '>' + data.name + '</option>');
+			$('.scatterVariable').append('<option value=' + csvVar + ' ' + selected + '>' + data.name + '</option>');	
 		}
 	});
 	$('.scatterVariable').change(function(){
@@ -1481,7 +1324,7 @@ function initialize() {
 		var $variableDesc = $('#' + this.id + '-description');
 		var description = typeof variableMap[this.value] !== 'undefined' ? variableMap[this.value].description : '';
 		$variableDesc.html(description);
-		if (this.id === 'xVariable' && this.value === 'Final_Score'){
+		if (this.id === 'xVariable' && this.value === 'final_score'){
 			// $variableDesc.append('<br/><strong>Note:</strong> Highlighted yellow region shows new projects that by definition do not have a current need (hence a zero value for ' + variableMap[this.value].name)
 		}
 	});
@@ -1505,10 +1348,10 @@ function initialize() {
 		colorVariable = this.value;
 		resetMarkers();
 	});
-	$('#ProjectTypeFilter').change(function(){
+	$('#countyFilter').change(function(){
 		removeHighlightIds();
 		if (this.value !== ''){
-			var layers = ProjectTypeMap[this.value];
+			var layers = countyMap[this.value];
 			$.each(layers, function(i, layer){
 				highlightChartPoint(layer.ID);
 				searchHighlightIds.push(layer.ID);
@@ -1516,7 +1359,7 @@ function initialize() {
 		}
 	});
 	var currentLayer;
-
+	
 	var csvUrl = 'sample_D.csv';
 	// 'BC_Current_Future_0812.csv'
 	d3.text(csvUrl, function(unparsedData){
@@ -1524,7 +1367,7 @@ function initialize() {
 		rawRows = d3.csv.parseRows(unparsedData);
 		rawRows.splice(0,1);
 		csv = d3.csv.parse(unparsedData);
-		csvRows = csv;
+		csvRows = csv;		
 			// console.log(csv);
 			regionalData = d3.nest()
 				// .key(function(d) { return d.ID; })
@@ -1543,8 +1386,8 @@ function initialize() {
 					return dataArray;
 				})
 				.map(csv);
-			ProjectTypeData = d3.nest()
-				.key(function(d) { return d.ProjectType; })
+			countyData = d3.nest()
+				.key(function(d) { return d.project_type; })
 				.rollup(function(d){
 					var dataArray = [];
 					$.each(variableMap, function(varName, data){
@@ -1576,11 +1419,11 @@ function initialize() {
 				.key(function(d) { return d.ID; })
 				.map(csv);
 
-			ProjectTypeMap = d3.nest()
-				.key(function(d) { return d.ProjectType; })
+			countyMap = d3.nest()
+				.key(function(d) { return d.project_type; })
 				.map(csv);
 			// console.log(csvMap);
-
+			
 
 			csv.forEach(function(row){
 				var newRow  = _.clone(row);
@@ -1594,7 +1437,7 @@ function initialize() {
 				// console.log(newRow);
 				var values = d3.values(newRow);
 				values = _.map(values, function(num){ return +num; });
-
+				
 				// values.splice(0,1);
 				// values.splice(0,1);
 				// values.splice(values.length - 1,1);
@@ -1604,7 +1447,7 @@ function initialize() {
 				csvData[row.ID] = {};
 				csvData[row.ID].data = values;
 			})
-
+			
 
 			// get line data
 
@@ -1626,11 +1469,11 @@ function initialize() {
 				projTypeMap = d3.nest()
 					.key(function(d) { return d.properties['PRJ_TYPE']; })
 					.map(json.features);
-				// Data table
+				// Data table 
 				var table = $('#projectTable');
 				var thead = $('<thead>')
 				var tr = $('<tr>')
-
+				
 				var categories = d3.keys(csvRows[0]);
 				// console.log(categories);
 				categories.splice(2, 0, 'Description');
@@ -1742,7 +1585,7 @@ function initialize() {
 						}
 					}
 				}).addTo(map);
-
+				
 				// console.log(counters);
 				map.fitBounds(counters.getBounds());
 				if (typeof currentLayer !== 'undefined'){
@@ -1793,11 +1636,11 @@ function initialize() {
 
             // `SZ` originally. this is the sum of the values seen thus
             // far when calculating variance.
-            var sum = 0,
+            var sum = 0, 
                 // `ZSQ` originally. the sum of squares of values seen
                 // thus far
                 sum_squares = 0,
-                // `WT` originally. This is the number of
+                // `WT` originally. This is the number of 
                 w = 0,
                 // `IV` originally
                 i4 = 0;
