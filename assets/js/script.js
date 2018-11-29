@@ -1502,10 +1502,10 @@ function initialize() {
 
 					// Start at i = 3 because first 3 elements are non-numerical
 					for (var i = 4; i < row.length; i++) {
-						if (i <= 5 && !isNaN(row[i]) && typeof row[i] !== 'undefined'){
+						if (i <= 4 && !isNaN(row[i]) && typeof row[i] !== 'undefined'){
 							row[i] = formats.fullDollar(+row[i]);
 						}
-						else if ( i > 5 && !isNaN(row[i])){
+						else if ( i > 4 && !isNaN(row[i])){
 							row[i] = formats.decimal(row[i]);
 						}
 					};
