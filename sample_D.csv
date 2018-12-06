@@ -1,5 +1,5 @@
 "ID","project_type","performance_tier","cost","mobility","reliability","connect","multimodal","assetmngmt","saftey","airclimate","cultenv","social_equity","land_compat","goods_move","emp_access","final_score"
-"MID-01","Bike",1,4580000,100,,35,60,,57,100,68,100,75,,100,74
+"MID-01","Bike",1,4580000,100,,35,60,,57,100,68,100,75,NULL,100,74
 "GW-380","Bike",4,5210000,23,,68,70,,74,4,63,0,25,,100,50
 "ADID-02","Ped",1,6150000,100,,100,30,,58,73,50,0,100,,100,70
 "HOL-01","Ped",4,3090000,23,,40,0,,10,4,50,0,0,,100,24
