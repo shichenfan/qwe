@@ -1038,7 +1038,7 @@ function drawScatter(data){
 	if (yVariable === 'final_score' || xVariable === 'final_score'){
 		label = {
             items: [{
-                html: 'Projects in yellow are new facilities (i.e., no current need can be determined).',
+                html: 'Value == -10 means Null data',
                 style: {
                     left: '10px',
                     top: '215px',
@@ -1049,6 +1049,7 @@ function drawScatter(data){
             }]
         };
 	}
+	
 	chart = $('#chart').highcharts({
 		chart: {
 	            zoomType: 'xy',
