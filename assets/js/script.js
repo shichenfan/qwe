@@ -1284,6 +1284,14 @@ function getColorScale(row){
 	if (colorVariable === 'none'){
 		return defaultHex;
 	}
+	else if (typeof jenks[colorVariable] === 'social_equity'){
+		var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+		breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2);
+		jenks[colorVariable] = d3.scale.quantile()
+		    .domain(breaks)
+		    .range(colorbrewer.RdPu.mod7)
+		return jenks[colorVariable](+row[colorVariable]);
+		 }
 	else if (typeof jenks[colorVariable] === 'undefined'){
 		// console.log(row[colorVariable]);
 		var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
