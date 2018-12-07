@@ -1372,7 +1372,7 @@ function initialize() {
 	d3.text(csvUrl, function(unparsedData){
 
 		rawRows = d3.csv.parseRows(unparsedData);
-		rawRows.splice(0,1);
+		rawRows.splice(0,2);
 		csv = d3.csv.parse(unparsedData);
 		csvRows = csv;		
 			// console.log(csv);
