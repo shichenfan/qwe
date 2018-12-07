@@ -1342,7 +1342,7 @@ function getColorScale(row){
 		
 		else  if (colorVariable === 'goods_move'){
 			var colorDomain = [0,100]; 
-			breaks = [0,49,99,101]
+			breaks = [NA,0,50,100]
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
