@@ -1333,7 +1333,7 @@ function getColorScale(row){
 		 }
 		else  if (colorVariable === 'performance_tier'){
 			var colorDomain = [1,5];
-			 breaks = [1.1,2.1,3.1,4.1]
+			 breaks = [1,1.9,2.9,3.9,4.9,5.9]
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1342,7 +1342,7 @@ function getColorScale(row){
 		
 		else  if (colorVariable === 'goods_move'){
 			var colorDomain = [0,100]; 
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			breaks = [0,49,99,101]
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
