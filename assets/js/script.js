@@ -1308,7 +1308,7 @@ function getColorScale(row){
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
 		 }
 		
-		else if(){breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9);
+		else {breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9);
 		    };
 		
 		jenks[colorVariable] = d3.scale.quantile()
