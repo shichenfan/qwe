@@ -1325,7 +1325,7 @@ function getColorScale(row){
 		 
 		else if (colorVariable === 'social_equity'){
 			 var colorDomain = [0,100];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2);
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 			 jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1333,7 +1333,7 @@ function getColorScale(row){
 		 }
 		else  if (colorVariable === 'performance_tier'){
 			var colorDomain = [1,5];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1341,31 +1341,31 @@ function getColorScale(row){
 		 }
 		else  if (colorVariable === 'airclimate'){
 			var colorDomain = [0,100];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]);
 		 }
-	else  if (colorVariable === 'multimodal'){
+		else  if (colorVariable === 'multimodal'){
 			var colorDomain = [0,100];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]);
 		 }
-	else  if (colorVariable === 'reliability'){
+		else  if (colorVariable === 'reliability'){
 			var colorDomain = [0,100];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]);
 		 }
-	else  if (colorVariable === 'connect'){
+		else  if (colorVariable === 'connect'){
 			var colorDomain = [0,100];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1373,7 +1373,7 @@ function getColorScale(row){
 		 }
 		else  if (colorVariable === 'goods_move'){
 			var colorDomain = [0,100]; 
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2);
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1393,10 +1393,8 @@ function getColorScale(row){
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
-			return jenks[colorVariable](+row[colorVariable]);    
-		};
-		
-	}	
+			return jenks[colorVariable](+row[colorVariable]);   	
+		}	
 }
 // function filterCounties(county){
 // 	// console.log(county);
