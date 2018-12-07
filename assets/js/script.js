@@ -1295,7 +1295,14 @@ function getColorScale(row){
 		// scales[colorVariable] = d3.scale.quantize()
 		//     .domain(colorDomain)
 		//     .range(colorbrewer.RdPu.mod7);
-		breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 3);
+		 if (colorVariable === 'social_equity'){
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2);
+		 }
+		else  if (colorVariable === 'performance_tier'){
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+		 }
+		else{breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9);}
+		
 		jenks[colorVariable] = d3.scale.quantile()
 		    .domain(breaks)
 		    .range(colorbrewer.RdPu.mod7)
