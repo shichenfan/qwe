@@ -1285,6 +1285,7 @@ function getColorScale(row){
 	if (colorVariable === 'none'){
 		return defaultHex;
 	}
+	/*
 	else if (typeof jenks[colorVariable] === 'undefined'){
 		// console.log(row[colorVariable]);
 		var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
@@ -1292,7 +1293,7 @@ function getColorScale(row){
 		// scales[colorVariable] = d3.scale.quantize()
 		//     .domain(colorDomain)
 		//     .range(colorbrewer.RdPu.mod7);
-		 /*
+		 
 		 if (colorVariable === 'social_equity'){
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 		 }
@@ -1305,17 +1306,42 @@ function getColorScale(row){
 		else  if (colorVariable === 'land_compat'){
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 		 }
-		*/
-		//else {
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
-		  //  };
+		
+		else {
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
+		    };
 		
 		jenks[colorVariable] = d3.scale.quantile()
 		    .domain(breaks)
 		    .range(colorbrewer.RdPu.mod7)
 		return jenks[colorVariable](+row[colorVariable]);
-	}
+	}*/
 	else{
+		var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+		// console.log(colorDomain)
+		// scales[colorVariable] = d3.scale.quantize()
+		//     .domain(colorDomain)
+		//     .range(colorbrewer.RdPu.mod7);
+		 
+		 if (colorVariable === 'social_equity'){
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+		 }
+		else  if (colorVariable === 'performance_tier'){
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
+		 }
+		else  if (colorVariable === 'goods_move'){
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 1)
+		 }
+		else  if (colorVariable === 'land_compat'){
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+		 }
+		else {
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
+		    };
+		
+		jenks[colorVariable] = d3.scale.quantile()
+		    .domain(breaks)
+		    .range(colorbrewer.RdPu.mod7)
 		return jenks[colorVariable](+row[colorVariable]);
 	}	
 }
