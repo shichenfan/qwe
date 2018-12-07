@@ -1302,10 +1302,10 @@ function getColorScale(row){
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
 		 }
 		else  if (colorVariable === 'goods_move'){
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 3)
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 		 }
 		else  if (colorVariable === 'land_compat'){
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 		 }
 		
 		else {breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
