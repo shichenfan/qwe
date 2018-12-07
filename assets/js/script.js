@@ -1301,7 +1301,15 @@ function getColorScale(row){
 		else  if (colorVariable === 'performance_tier'){
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
 		 }
-		else{breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9);}
+		else  if (colorVariable === 'goods_move'){
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 3);
+		 }
+		else  if (colorVariable === 'land_compat'){
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+		 }
+		
+		else if(){breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9);
+		    };
 		
 		jenks[colorVariable] = d3.scale.quantile()
 		    .domain(breaks)
