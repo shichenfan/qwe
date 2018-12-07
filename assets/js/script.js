@@ -1285,9 +1285,6 @@ function getColorScale(row){
 	if (colorVariable === 'none'){
 		return defaultHex;
 	}
-	else if (typeof jenks[colorVariable] === 'social_equity'){
-	return defaultHex;
-		 }
 	else if (typeof jenks[colorVariable] === 'undefined'){
 		// console.log(row[colorVariable]);
 		var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
@@ -1295,6 +1292,7 @@ function getColorScale(row){
 		// scales[colorVariable] = d3.scale.quantize()
 		//     .domain(colorDomain)
 		//     .range(colorbrewer.RdPu.mod7);
+		 /*
 		 if (colorVariable === 'social_equity'){
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 		 }
@@ -1307,9 +1305,10 @@ function getColorScale(row){
 		else  if (colorVariable === 'land_compat'){
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 		 }
-		
-		else {breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
-		    };
+		*/
+		//else {
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+		  //  };
 		
 		jenks[colorVariable] = d3.scale.quantile()
 		    .domain(breaks)
