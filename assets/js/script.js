@@ -1348,6 +1348,15 @@ function getColorScale(row){
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]);
 		 }
+	else  if (colorVariable === 'multimodal'){
+			var colorDomain = [0,100];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			jenks[colorVariable] = d3.scale.quantile()
+		   	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);
+		 }
+
 		else  if (colorVariable === 'land_compat'){
 			var colorDomain = [0,100];
 			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
