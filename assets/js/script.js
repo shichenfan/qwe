@@ -1317,32 +1317,54 @@ function getColorScale(row){
 		return jenks[colorVariable](+row[colorVariable]);
 	}*/
 	else{
-		var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+		
 		// console.log(colorDomain)
 		// scales[colorVariable] = d3.scale.quantize()
 		//     .domain(colorDomain)
 		//     .range(colorbrewer.RdPu.mod7);
 		 
 		 if (colorVariable === 'social_equity'){
+			 var colorDomain = [0,100];
+
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
-		 }
-		else  if (colorVariable === 'performance_tier'){
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
-		 }
-		else  if (colorVariable === 'goods_move'){
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 1)
-		 }
-		else  if (colorVariable === 'land_compat'){
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
-		 }
-		else {
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
-		    };
-		
-		jenks[colorVariable] = d3.scale.quantile()
+			 jenks[colorVariable] = d3.scale.quantile()
 		    .domain(breaks)
 		    .range(colorbrewer.RdPu.mod7)
 		return jenks[colorVariable](+row[colorVariable]);
+		 }
+		else  if (colorVariable === 'performance_tier'){
+			var colorDomain = [1,5];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
+			jenks[colorVariable] = d3.scale.quantile()
+		    .domain(breaks)
+		    .range(colorbrewer.RdPu.mod7)
+		return jenks[colorVariable](+row[colorVariable]);
+		 }
+		else  if (colorVariable === 'goods_move'){
+			var colorDomain = [0,100]; 
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 1)
+			jenks[colorVariable] = d3.scale.quantile()
+		    	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);
+		 }
+		else  if (colorVariable === 'land_compat'){
+			var colorDomain = [0,100];
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			jenks[colorVariable] = d3.scale.quantile()
+		   	 .domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]); 
+		}
+		else {
+			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
+			jenks[colorVariable] = d3.scale.quantile()
+		    	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);    
+		};
+		
 	}	
 }
 // function filterCounties(county){
