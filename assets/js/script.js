@@ -1295,7 +1295,7 @@ function getColorScale(row){
 		// scales[colorVariable] = d3.scale.quantize()
 		//     .domain(colorDomain)
 		//     .range(colorbrewer.RdPu.mod7);
-		breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9);
+		breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 3);
 		jenks[colorVariable] = d3.scale.quantile()
 		    .domain(breaks)
 		    .range(colorbrewer.RdPu.mod7)
