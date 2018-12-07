@@ -1316,33 +1316,64 @@ function getColorScale(row){
 		    .range(colorbrewer.RdPu.mod7)
 		return jenks[colorVariable](+row[colorVariable]);
 	}*/
-	else{
+	
 		
 		// console.log(colorDomain)
 		// scales[colorVariable] = d3.scale.quantize()
 		//     .domain(colorDomain)
 		//     .range(colorbrewer.RdPu.mod7);
 		 
-		 if (colorVariable === 'social_equity'){
+		else if (colorVariable === 'social_equity'){
 			 var colorDomain = [0,100];
-
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2);
 			 jenks[colorVariable] = d3.scale.quantile()
-		    .domain(breaks)
-		    .range(colorbrewer.RdPu.mod7)
-		return jenks[colorVariable](+row[colorVariable]);
+		    	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);
 		 }
 		else  if (colorVariable === 'performance_tier'){
 			var colorDomain = [1,5];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
 			jenks[colorVariable] = d3.scale.quantile()
-		    .domain(breaks)
-		    .range(colorbrewer.RdPu.mod7)
-		return jenks[colorVariable](+row[colorVariable]);
+		   	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);
+		 }
+		else  if (colorVariable === 'airclimate'){
+			var colorDomain = [0,100];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			jenks[colorVariable] = d3.scale.quantile()
+		   	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);
+		 }
+	else  if (colorVariable === 'multimodal'){
+			var colorDomain = [0,100];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			jenks[colorVariable] = d3.scale.quantile()
+		   	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);
+		 }
+	else  if (colorVariable === 'reliability'){
+			var colorDomain = [0,100];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			jenks[colorVariable] = d3.scale.quantile()
+		   	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);
+		 }
+	else  if (colorVariable === 'connect'){
+			var colorDomain = [0,100];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5);
+			jenks[colorVariable] = d3.scale.quantile()
+		   	.domain(breaks)
+		    	.range(colorbrewer.RdPu.mod7)
+			return jenks[colorVariable](+row[colorVariable]);
 		 }
 		else  if (colorVariable === 'goods_move'){
 			var colorDomain = [0,100]; 
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 1)
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2);
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
