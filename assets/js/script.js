@@ -1038,7 +1038,7 @@ function drawScatter(data){
 	if (yVariable === 'final_score' || xVariable === 'final_score'){
 		label = {
             items: [{
-                html: '...',
+                html: 'Value == -10 means Null data',
                 style: {
                     left: '10px',
                     top: '215px',
@@ -1346,10 +1346,7 @@ function getColorScale(row){
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
-			if(2>0){
-			return jenks[colorVariable](+row[colorVariable]);}
-	else if (){ return '#ffffff'
-		 }
+			return jenks[colorVariable](+row[colorVariable]);
 		 }
 	else  if (colorVariable === 'multimodal'){
 			var colorDomain = [0,100];
@@ -1357,7 +1354,7 @@ function getColorScale(row){
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
-			return jenks[colorVariable](+row[colorVariable]-7);
+			return jenks[colorVariable](+row[colorVariable]);
 		 }
 
 		else  if (colorVariable === 'land_compat'){
