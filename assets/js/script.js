@@ -1354,7 +1354,7 @@ function getColorScale(row){
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
-			return jenks[colorVariable](+row[colorVariable]);
+			return jenks[colorVariable](+row[colorVariable]-7);
 		 }
 
 		else  if (colorVariable === 'land_compat'){
