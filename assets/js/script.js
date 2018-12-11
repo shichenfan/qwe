@@ -1348,15 +1348,15 @@ function getColorScale(row){
 		
 		else  if (colorVariable === 'goods_move'){
 			var colorDomain = [0,100]; 
-			breaks = [0,10,20,30,40,50,60,70,80,90,100]
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]);
 		 }
 	else  if (colorVariable === 'multimodal'){
-			var colorDomain = [0,100];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			var colorDomain = [-10,110];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
