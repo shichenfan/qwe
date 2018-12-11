@@ -1346,32 +1346,32 @@ function getColorScale(row){
 			return jenks[colorVariable](+row[colorVariable]);
 		 }
 		else  if (colorVariable === 'reliability'){
-			var colorDomain = [0,100];
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	 .domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]); 
 		}
 		else  if (colorVariable === 'connect'){
-			var colorDomain = [undefined,0,100];
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	 .domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]); 
 		}
 	else  if (colorVariable === 'multimodal'){
-			var colorDomain = [0,100];
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 5)
+			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]);
 		 }
 	else  if (colorVariable === 'assetmngmt'){
-			var colorDomain = ['undefined',0,100];
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	 .domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1386,15 +1386,15 @@ function getColorScale(row){
 			return jenks[colorVariable](+row[colorVariable]); 
 		}
 		else  if (colorVariable === 'land_compat'){
-			var colorDomain = [0,100];
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
+			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	 .domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]); 
 		}else  if (colorVariable === 'goods_move'){
-			var colorDomain = [0,100]; 
-			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 3)
+			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
