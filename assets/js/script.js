@@ -1208,7 +1208,7 @@ function matchKey(datapoint, key_variable){
 function convertHex(hex,opacity){
 	// if(typeof hex === 'undefined')
 	// 	console.log(hex);
-	if (hex == 'undefined') {
+	if (typeof hex === 'undefined') {
 		r = 255
 		g = 255
 		b = 255
