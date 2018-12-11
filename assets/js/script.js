@@ -1208,11 +1208,17 @@ function matchKey(datapoint, key_variable){
 function convertHex(hex,opacity){
 	// if(typeof hex === 'undefined')
 	// 	console.log(hex);
+	if (hex == 'undefined') {
+		r = 255
+		g = 255
+		b = 255
+	}
+	else{
     hex = hex.replace('#','');
     r = parseInt(hex.substring(0,2), 16);
     g = parseInt(hex.substring(2,4), 16);
     b = parseInt(hex.substring(4,6), 16);
-
+	}
     result = 'rgba('+r+','+g+','+b+','+opacity+')';
     return result;
 }
