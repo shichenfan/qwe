@@ -1341,12 +1341,15 @@ function getColorScale(row){
 		 }
 		
 		else  if (colorVariable === 'goods_move'){
-			var colorDomain = [-1,101]; 
+			var colorDomain = [0,100]; 
 			breaks = [0,10,20,30,40,50,60,70,80,90,100]
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
-			return jenks[colorVariable](+row[colorVariable]-74);
+			if(2>0){
+			return jenks[colorVariable](+row[colorVariable]);}
+	else if (){ return '#ffffff'
+		 }
 		 }
 	else  if (colorVariable === 'multimodal'){
 			var colorDomain = [0,100];
