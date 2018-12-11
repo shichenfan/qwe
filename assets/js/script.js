@@ -1038,7 +1038,7 @@ function drawScatter(data){
 	if (yVariable === 'final_score' || xVariable === 'final_score'){
 		label = {
             items: [{
-                html: 'Value == -10 means Null data',
+                html: '...',
                 style: {
                     left: '10px',
                     top: '215px',
