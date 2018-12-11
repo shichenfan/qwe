@@ -1347,7 +1347,7 @@ function getColorScale(row){
 		 }
 		else  if (colorVariable === 'reliability'){
 			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],100];
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 7)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	 .domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1355,7 +1355,7 @@ function getColorScale(row){
 		}
 		else  if (colorVariable === 'connect'){
 			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 7)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	 .domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1371,7 +1371,7 @@ function getColorScale(row){
 		 }
 	else  if (colorVariable === 'assetmngmt'){
 			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],100];
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }),8)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	 .domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
@@ -1387,13 +1387,13 @@ function getColorScale(row){
 		}
 		else  if (colorVariable === 'land_compat'){
 			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
-			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 9)
+			breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 7)
 			jenks[colorVariable] = d3.scale.quantile()
 		   	 .domain(breaks)
 		    	.range(colorbrewer.RdPu.mod7)
 			return jenks[colorVariable](+row[colorVariable]); 
 		}else  if (colorVariable === 'goods_move'){
-			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],+_.max(filteredRows,colorVariable)[colorVariable]];
+			var colorDomain = [+_.min(filteredRows,colorVariable)[colorVariable],100];
 			 breaks = ss.jenks(csvRows.map(function(d) { return +d[colorVariable]; }), 2)
 			jenks[colorVariable] = d3.scale.quantile()
 		    	.domain(breaks)
