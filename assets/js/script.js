@@ -52,7 +52,7 @@ var options={
   minZoom:9
 };
 // Provide your access token
-	L.mapbox.accessToken = 'pk.eyJ1IjoiYXRscmVnaW9uYWwiLCJhIjoiQmZ6d2tyMCJ9.oENm3NSf--qHrimdm9Vvdw';
+	L.mapbox.accessToken = 'pk.eyJ1IjoiZnNjeHh4IiwiYSI6ImNqbGRyeXZieTBiMmEzcXF6aDBuajd2MzAifQ.RP27oQjdKHxmq0VP-hVXLA';
 	// Create a map in the div #map
 	map = L.mapbox.map('map', 'atlregional.tm2-basemap',options).setView([ 33.45,-84.23]);
 
